@@ -11,6 +11,8 @@
     - Computer Vision
     - Speech Recognition
     - Text to Speach
+- Embedings
+- Generative AI
 
 ### Relation between this key concepts:
 ```code
@@ -29,6 +31,7 @@ AI -> ML -> DL -> NL
 - https://scikit-learn.org/
 
 ## Links
+- [Introduction to Generative AI learning path](https://www.cloudskillsboost.google/paths/118)
 - https://developers.google.com/mediapipe
 - https://www.kaggle.com/
 - https://learn.deeplearning.ai/
