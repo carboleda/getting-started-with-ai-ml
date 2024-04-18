@@ -1,0 +1,16 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "enhanced-prompt-interface/index.js",
+  "scripts": {
+    "start:epi": "node --env-file=.env enhanced-prompt-interface/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.7.1"
+  }
+}
