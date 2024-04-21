@@ -5,12 +5,16 @@
   "type": "module",
   "main": "enhanced-prompt-interface/index.js",
   "scripts": {
-    "start:epi": "node --env-file=.env enhanced-prompt-interface/index.js"
+    "epi:start": "node --env-file=.env enhanced-prompt-interface/index.js",
+    "ollama:create": "ollama create expenses-extractor:gemma2b -f gemma-ollama/Modelfile",
+    "ollama:rm": "ollama rm expenses-extractor:gemma2b",
+    "ollama:start": "node gemma-ollama/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@google/generative-ai": "^0.7.1"
+    "@google/generative-ai": "^0.7.1",
+    "ollama": "^0.5.0"
   }
 }

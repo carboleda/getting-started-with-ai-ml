@@ -1,0 +1,237 @@
+You will be provided with information about incomes and expenses. From each input extract: Description, Amount, Type (Income/Expense), Category and Account (Scotiabank 2163/Davivienda 1408/AFC). The following are examples of inputs and outputs:
+
+The following are examples of inputs and outputs:
+- Input: Pago recibo de gas por 31954, C1408
+  Output: Description: Pago recibo de gas, Amount: 31954, Type: Expense, Category: Servicios, Account: Davivienda 1408
+- Input: Ingreso por salario de 2000000, C1408
+  Output: Description: Ingreso por salario, Amount: 2000000, Type: Income, Category: Salario, Account: Davivienda 1408
+- Input: C1408: Pago de administración Masari por 301000
+  Output: Description: Pago de administración Masari, Amount: 301000, Type: Expense, Category: Masari, Account: Davivienda 1408
+- Input: Pago de cuota Masari por 1600000, AFC
+  Output: Description: Pago de hipoteca Masari, Amount: 1600000, Type: Expense, Category: Masari, Account: AFC
+- Input: Retiro en cajero por 200000, C1408
+  Output: Description: Retiro en cajero, Amount: 200000, Type: Expense, Category: Cajero, Account: Davivienda 1408
+- Input: C2163: Compra de mercado por 700000
+  Output: Description: Compra de mercado, Amount: 700000, Type: Expense, Category: Mercado, Account: Scotiabank 2163
+- Input: Gasolina del carro por 150000, C2163
+  Output: Description: Gasolina del carro, Amount: 150000, Type: Expense, Category: Vehiculo, Account: Scotiabank 2163
+- Input: SOAT del carro por 450000, C2163
+  Output: Description: SOAT del carro, Amount: 450000, Type: Expense, Category: Vehiculo, Account: Scotiabank 2163
+- Input: Pago de internet por 140600, C2163
+  Output: Description: Pago de internet, Amount: 140600, Type: Expense, Category: Servicios, Account: Scotiabank 2163
+- Input: Intereses cuenta de ahorro por 3000, C1408
+  Output: Description: Intereses cuenta de ahorro, Amount: 3000, Type: Income, Category: Ahorros, Account: Davivienda 1408
+- Input: Salida familiar a pasear por 300000, C2163
+  Output: Description: Salida familiar a pasear, Amount: 300000, Type: Expense, Category: Entretenimiento, Account: Scotiabank 2163
+
+Int the response the Account field must always be the corresponding bank account that matches the input:
+- Input: C1408
+  Output: Davienda 1408
+- Input: C2163
+  Output: Scotiabank 2163
+- Input: AFC
+  Output: AFC
+- Input: , C1408
+  Output: Davienda 1408
+- Input: , C2163
+  Output: Scotiabank 2163
+- Input: , AFC
+  Output: AFC
+- Input: C1408:
+  Output: Davienda 1408
+- Input: C2163:
+  Output: Scotiabank 2163
+- Input: AFC:
+  Output: AFC
+- Input: Devolución préstamo por 1000000, C1408
+  Output: Davivienda 1408
+- Input: Intereses cuenta de ahorro por 3000, C1408
+  Output: Davivienda 1408
+- Input: Alimento de Zeus por 224000, C1408
+  Output: Davivienda 1408
+- Input: C2163: Alimento de Zeus por 224000
+  Output: Scotiabank 2163
+- Input: Compra de teclado por 100000, C2163
+  Output: Scotiabank 2163
+- Input: Compra de gotas oftálmicas por 50000, C2163
+  Output: Scotiabank 2163
+- Input: Costos TC 2900, C2163
+  Output: Scotiabank 2163
+- Input: Alimento de Zeus por 224000, C2163
+  Output: Scotiabank 2163
+- Input: C2163 Compra de ropa por 200000
+  Output: Scotiabank 2163
+- Input: Salida familiar a pasear por 300000 C2163
+  Output: Scotiabank 2163
+- Input: Consignación, AFC
+  Output: AFC
+- Input: AFC: Pago credito Masari
+  Output: AFC
+- Input: Pago credito Masari,AFC
+  Output: AFC
+- Input: C1408 Compra de gotas oftálmicas por 50000
+  Output: Davienda 1408
+- Input: Ingresos por intereses 1200, AFC
+  Output: AFC
+- Input: AFC: Ingresos por intereses 450
+  Output: AFC
+
+In the response the Description field must always be according to the classification included in the input:
+- Input: Retiro en cajero por valor de 10000
+  Output: Retiro en cajero
+- Input: Compra de mercado por 3000
+  Output: Compra de mercado
+- Input: Gasolina del carro por 20000
+  Output: Gasolina del carro
+- Input: SOAT del carro por valor de 400000
+  Output: SOAT del carro
+- Input: Pago de internet
+  Output: Pago de internet
+- Input: Intereses cuenta de ahorro por 1500
+  Output: Intereses cuenta de ahorro
+- Input: Salida familiar a pasear
+  Output: Salida familiar a pasear
+- Input: Ingreso por arriendo
+  Output: Ingreso por arriendo
+- Input: Pago de medicina prepagada por 95000
+  Output: Pago de medicina prepagada
+- Input: Ingresos por intereses 1200, AFC
+  Output: Ingresos por intereses
+- Input: Pago credito Masari
+  Output: Pago credito Masari
+- Input: Compra de ropa por 200000, C2163
+  Output: Compra de ropa
+- Input: Compra de gotas oftálmicas por 50000, C2163
+  Output: Compra de gotas oftálmicas
+- Input: Costos TC 2900, C2163
+  Output: Costos TC
+- Input: Compra de teclado por 100000, C2163
+  Output: Compra de teclado
+- Input: Alimento de Zeus por 224000, C2163
+  Output: Alimento de Zeus
+- Input: Alimento de Zeus por 224000, C1408
+  Output: Alimento de Zeus
+- Input: Devolución préstamo por 100000, C1408
+  Output: Devolución préstamo
+- Input: Intereses cuenta de ahorro por 3000, C1408
+  Output: Intereses cuenta de ahorro
+- Input: Alimento de Zeus por 224000, C1408
+  Output: Alimento de Zeus
+- Input: C2163: Alimento de Zeus por 224000
+  Output: Alimento de Zeus
+- Input: Compra de teclado por 100000, C2163
+  Output: Compra de teclado
+- Input: Compra de gotas oftálmicas por 50000, C2163
+  Output: Compra de gotas oftálmicas
+- Input: Costos TC 2900, C2163
+  Output: Costos TC
+- Input: Alimento de Zeus por 224000, C2163
+  Output: Alimento de Zeus
+- Input: C2163 Compra de ropa por 200000
+  Output: Compra de ropa
+- Input: Salida familiar a pasear por 300000 C2163
+  Output: Salida familiar a pasear
+- Input: Consignación, AFC
+  Output: Consignación
+- Input: AFC: Pago credito Masari
+  Output: Pago credito Masari
+
+In the response the Category field must always be according to the classification included in the input:
+- Input Compra de mercado
+  Output: Mercado
+- Input: Gasolina del carro
+  Output: Vehiculo
+- Input: SOAT del carro
+  Output: Vehiculo
+- Input: Pago de internet
+  Output: Servicios
+- Input: Intereses cuenta de ahorro
+  Output: Intereses
+- Input: Salida familiar a pasear
+  Output: Entretenimiento
+- Input: Ingreso por arriendo
+  Output: Ingreso
+- Input: Pago de medicina prepagada
+  Output: Salud
+- Input: Compra de ropa
+  Output: Ropa
+- Input: Compra de gotas oftálmicas
+  Output: Salud
+- Input: Costos TC
+  Output: Costos Scotiabank
+- Input: Compra de teclado
+  Output: Tecnologia
+- Input: Ingresos por intereses
+  Output: Intereses
+- Input: Pago credito Masari
+  Output: Hipoteca
+- Input: Compra de ropa
+  Output: Ropa
+- Input: Pago de medicina prepagada
+  Output: Salud
+- Input: Alimento de Zeus
+  Output: Mascota
+- Input: Devolución préstamo
+  Output: Ingreso
+
+In the response the Amount field must always be the same value included in the input:
+- Input: 31954.16
+  Output: 31954.16
+- Input: 2000000
+  Output: 2000000
+- Input: 301000
+  Output: 301000
+- Input: 1600000
+  Output: 1600000
+- Input: 200000
+  Output: 200000
+- Input: 700000
+  Output: 700000
+- Input: 150000.30
+  Output: 150000.30
+- Input: 450000
+  Output: 450000
+- Input: 140600
+  Output: 140600
+- Input: 3000
+  Output: 3000
+- Input: 300000.09
+  Output: 300000.09
+- Input: 1000000
+  Output: 1000000
+- Input: 134950.10
+  Output: 134950.10
+
+In the response the Type field must depend on the description:
+- Input Compra de mercado
+  Output: Expense
+- Input: Gasolina del carro
+  Output: Expense
+- Input: SOAT del carro
+  Output: Expense
+- Input: Pago de internet
+  Output: Expense
+- Input: Intereses cuenta de ahorro
+  Output: Income
+- Input: Salida familiar a pasear
+  Output: Expense
+- Input: Ingreso por arriendo
+  Output: Income
+- Input: Pago de medicina prepagada
+  Output: Expense
+- Input: Compra de ropa
+  Output: Expense
+- Input: Compra de gotas oftálmicas
+  Output: Expense
+- Input: Costos TC
+  Output: Expense
+- Input: Consignación AFC
+  Output: Income
+- Input: Compra de teclado
+  Output: Expense
+- Input: Alimento de Zeus
+  Output: Expense
+- Input: Devolución préstamo
+  Output: Income
+
+Constrains: Only respond to the last question asked. Always include in the response the fields Description, Amount, Type, Category and Account. Format the reponse in JSON.
