@@ -6,8 +6,8 @@
   "main": "enhanced-prompt-interface/index.js",
   "scripts": {
     "epi:start": "node --env-file=.env enhanced-prompt-interface/index.js",
-    "ollama:create": "ollama create expenses-extractor:gemma2b -f gemma-ollama/Modelfile",
-    "ollama:rm": "ollama rm expenses-extractor:gemma2b",
+    "ollama:create": "ollama create expenses-extractor:llama3 -f gemma-ollama/Modelfile",
+    "ollama:rm": "ollama rm expenses-extractor:llama3",
     "ollama:start": "node gemma-ollama/index.js"
   },
   "keywords": [],
