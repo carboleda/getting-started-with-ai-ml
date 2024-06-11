@@ -1,7 +1,7 @@
 const accounts = {
   C2163: "Scotiabank 2163",
   C1408: "Davivienda 1408",
-  AFC: "AFC",
+  AFC: "Davivienda AFC",
 };
 const baseShots = (inputAccount, outputAccount) => `
 - Input: Pago recibo de gas por 31954, ${inputAccount}
