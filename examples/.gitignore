@@ -84,3 +84,6 @@ public
 
 # Stores VSCode versions used for testing
 .vscode-test
+
+local-files
+lib
