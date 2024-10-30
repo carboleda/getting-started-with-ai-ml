@@ -4,6 +4,7 @@ export const createFunctionCaller = (model, functions) => {
     const result = await model.generateContent({
       contents: [prompt],
     });
+    console.log("result", result);
     const response = result.response;
     // console.dir(response, { depth: null });
 
@@ -59,6 +60,8 @@ function callFunction(parts, functions) {
     if (!fn) {
       throw new Error(`Unknown function "${name}"`);
     }
+
+    console.log(`Calling function ${name} with args`, args);
 
     return {
       role: "function",

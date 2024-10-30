@@ -4,7 +4,7 @@ import { p } from "./interface.js";
 // Model configuration
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({
-  model: "gemini-pro-vision",
+  model: "gemini-1.5-flash",
   generationConfig: {
     temperature: 0,
     maxOutputTokens: 1024,
